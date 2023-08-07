@@ -37,6 +37,7 @@ const Page = styled.div`
     display:flex;
     flex-direction:column;
     align-items:center;
+    font-family: 'Lexend Deca', sans-serif;
 `
 
 const Header = styled.div`
@@ -53,6 +54,10 @@ const Hbutton = styled.button`
     background-color:transparent;
     font-size: 14px;
     line-height: 17.5px;
+    font-family: 'Lexend Deca', sans-serif;
+    :hover{
+        cursor: pointer;
+    }
 `
 
 const Container = styled.div`
