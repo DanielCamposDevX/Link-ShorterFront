@@ -8,16 +8,16 @@ export default function Login() {
 
     return (
         <Page>
-           <Header>
-                <Hbutton style={{ color: '#5D9040' }}>Entrar</Hbutton>
-                <Hbutton>Cadastrar-se</Hbutton>
+            <Header>
+                <Link to='/login'><Hbutton style={{ color: '#5D9040' }}>Entrar</Hbutton></Link>
+                <Link to='/signup'><Hbutton>Cadastrar-se</Hbutton></Link>
             </Header>
             <Container>
                 <CusImg src={Logo} />
-                <Container style={{justifyContent: 'center'}}>
-                        <Search placeholder='email' />
-                        <Search placeholder='senha' />
-                        <Sbutton>Entrar</Sbutton>
+                <Container style={{ justifyContent: 'center' }}>
+                    <Search placeholder='email' />
+                    <Search placeholder='senha' />
+                    <Sbutton>Entrar</Sbutton>
                 </Container>
             </Container>
 

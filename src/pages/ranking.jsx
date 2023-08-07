@@ -1,8 +1,23 @@
 import styled from 'styled-components'
 import Logo from '../assets/Logo.svg'
 import Trophy from '../assets/Trophy.svg'
+import axios from 'axios'
+import { useEffect, useState } from 'react'
+
 
 export default function Ranking() {
+
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        const promise = axios.get(`https://shortlyapi-h6sh.onrender.com/ranking`)
+        promise.then((res) => {
+            setData(res.data);
+        })
+        promise.catch((error) => { alert(error) })
+        console.log(data)
+    }, [])
+
 
     return (
         <Page>
@@ -18,11 +33,11 @@ export default function Ranking() {
                         <h1>Ranking</h1>
                     </span>
                     <RankContainer>
-                        <h1><span>1. Fulaninha</span> - 32 links - 1.703.584 visualizações</h1>
-                        <h1><span>1. Fulaninha</span>- 32 links - 1.703.584 visualizações</h1>
-                        <h1><span>1. Fulaninha</span>- 32 links - 1.703.584 visualizações</h1>
-                        <h1><span>1. Fulaninha</span>- 32 links - 1.703.584 visualizações</h1>
-                        <h1><span>1. Fulaninha</span>- 32 links - 1.703.584 visualizações</h1>
+                        {data && data.map((item, index) => (
+                            <h1 key={index}>
+                                <span>{index+1}.{item.name}</span> - {item.linkCount} links - {item.visitCount} visualizações
+                            </h1>
+                        ))}
                     </RankContainer>
                 </Container>
             </Container>

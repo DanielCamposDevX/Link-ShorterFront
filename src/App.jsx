@@ -6,7 +6,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/ranking' element={<Ranking />} />
+        <Route path='/' element={<Ranking />} />
         <Route path='/shorten' element={<Shorten />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
